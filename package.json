@@ -4,11 +4,14 @@
     "description": "",
     "version": "0.1.0",
     "publisher": "lirrensi",
+    "repository": "https://github.com/lirrensi/easycmd/",
+    "icon": "images/Icon_128.png",
     "engines": {
         "vscode": "^1.96.0"
     },
     "categories": [
-        "Other"
+        "Other",
+        "Visualization"
     ],
     "activationEvents": [
         "onStartupFinished"

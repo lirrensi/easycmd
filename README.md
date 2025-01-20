@@ -8,7 +8,7 @@ EasyCMD is a lightweight and efficient Visual Studio Code extension designed to 
     Highlight and execute commands from `.easycmd` files with just a click.  
     You can rename any `.txt` file to have the `.easycmd` extension to unlock these features.
 
-    ![EasyCMD Command Management](images/img_special.png)
+    ![EasyCMD Command Management](https://github.com/lirrensi/easycmd/raw/master/images/img_special.png)
 
 -   **Inline Command Execution Using CodeLens**  
      Write commands in a supported syntax within any file and execute them seamlessly. EasyCMD supports commands such as:
@@ -18,7 +18,7 @@ EasyCMD is a lightweight and efficient Visual Studio Code extension designed to 
 
 CodeLens will appear above these commands, allowing you to execute them quickly.
 
-![CodeLens Example](images/img_code.png)
+![CodeLens Example](https://github.com/lirrensi/easycmd/raw/master/images/img_code.png)
 
 -   **Run Commands in Different Terminal Modes**  
     Choose how to execute your commands:
@@ -39,11 +39,11 @@ CodeLens will appear above these commands, allowing you to execute them quickly.
 -   **Right-Click Context Menu and Editor Title Toolbar**  
     Access EasyCMD functionality directly from the editor's context menu, which appears when text is selected in any file.
 
-![Context Menu Example](images/img_context.png)
+![Context Menu Example](https://github.com/lirrensi/easycmd/raw/master/images/img_context.png)
 
 EasyCMD also adds two small buttons to the navigation bar for quick access:
 
-![Toolbar Buttons](images/img_buttons.png)
+![Toolbar Buttons](https://github.com/lirrensi/easycmd/raw/master/images/img_buttons.png)
 
 ---
 
@@ -73,7 +73,7 @@ Please report all issues [here](https://github.com/lirrensi/easycmd/issues).
 
 ## Release Notes
 
-### 1.0.0
+### 0.1.0
 
 -   Initial release of EasyCMD.
 -   Core features:

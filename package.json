@@ -1,0 +1,174 @@
+{
+    "name": "easycmd",
+    "displayName": "easycmd",
+    "description": "",
+    "version": "0.1.0",
+    "publisher": "lirrensi",
+    "repository": "https://github.com/lirrensi/easycmd/",
+    "icon": "images/Icon_128.png",
+    "engines": {
+        "vscode": "^1.96.0"
+    },
+    "categories": [
+        "Other",
+        "Visualization"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "easycmd",
+                "extensions": [
+                    ".easycmd"
+                ],
+                "aliases": [
+                    "EasyCMD"
+                ]
+            }
+        ],
+        "commands": [
+            {
+                "command": "easycmd.copyToClipboard",
+                "title": "Copy to Clipboard"
+            },
+            {
+                "command": "easycmd.pasteInCurrentTerminal",
+                "title": "Paste in Current Terminal",
+                "icon": {
+                    "light": "/icons/light/run.svg",
+                    "dark": "/icons/dark/run.svg"
+                }
+            },
+            {
+                "command": "easycmd.runInCurrentTerminal",
+                "title": "Run in Current Terminal",
+                "icon": {
+                    "light": "/icons/light/run.svg",
+                    "dark": "/icons/dark/run.svg"
+                }
+            },
+            {
+                "command": "easycmd.runInNewTerminalVSCode",
+                "title": "Run in New Terminal (VS Code)",
+                "icon": {
+                    "light": "/icons/light/run.svg",
+                    "dark": "/icons/dark/run.svg"
+                }
+            },
+            {
+                "command": "easycmd.runInNewTerminalExternal",
+                "title": "Run in Dedicated Terminal (External)",
+                "icon": {
+                    "light": "/icons/light/run.svg",
+                    "dark": "/icons/dark/run.svg"
+                }
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "easycmd.pasteInCurrentTerminal",
+                "key": "ctrl+x ctrl+c",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "easycmd.runInCurrentTerminal",
+                "key": "ctrl+x ctrl+v",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "easycmd.runInNewTerminalVSCode",
+                "key": "ctrl+x ctrl+b",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "easycmd.runInNewTerminalExternal",
+                "key": "ctrl+x ctrl+n",
+                "when": "editorTextFocus"
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "easycmd.pasteInCurrentTerminal",
+                    "when": "editorHasSelection",
+                    "group": "navigation"
+                },
+                {
+                    "command": "easycmd.runInCurrentTerminal",
+                    "when": "editorHasSelection",
+                    "group": "navigation"
+                }
+            ],
+            "editor/context": [
+                {
+                    "submenu": "easycmd.easyCmdSubmenu",
+                    "group": "1_easyCmdGroup",
+                    "when": "editorHasSelection"
+                }
+            ],
+            "easycmd.easyCmdSubmenu": [
+                {
+                    "command": "easycmd.pasteInCurrentTerminal",
+                    "group": "1_easyCmdGroup"
+                },
+                {
+                    "command": "easycmd.runInCurrentTerminal",
+                    "group": "1_easyCmdGroup"
+                },
+                {
+                    "command": "easycmd.runInNewTerminalVSCode",
+                    "group": "1_easyCmdGroup"
+                },
+                {
+                    "command": "easycmd.runInNewTerminalExternal",
+                    "group": "1_easyCmdGroup"
+                }
+            ]
+        },
+        "submenus": [
+            {
+                "id": "easycmd.easyCmdSubmenu",
+                "label": "EasyCMD Commands"
+            }
+        ],
+        "semanticTokenTypes": [
+            {
+                "id": "command",
+                "superType": "keyword",
+                "description": "Terminal command"
+            }
+        ],
+        "semanticTokenScopes": [
+            {
+                "language": "*",
+                "scopes": {
+                    "command": [
+                        "keyword.control.command"
+                    ]
+                }
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.96.0",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "20.x",
+        "@typescript-eslint/eslint-plugin": "^8.17.0",
+        "@typescript-eslint/parser": "^8.17.0",
+        "eslint": "^9.16.0",
+        "typescript": "^5.7.2",
+        "@vscode/test-cli": "^0.0.10",
+        "@vscode/test-electron": "^2.4.1"
+    }
+}

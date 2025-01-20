@@ -1,0 +1,8 @@
+Basic command
+use > before and it will register
+
+> ls 
+
+> sudo ls
+
+> echo "Hello World" > output.txt

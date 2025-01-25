@@ -2,12 +2,12 @@
     "name": "easycmd",
     "displayName": "easycmd",
     "description": "",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "lirrensi",
     "repository": "https://github.com/lirrensi/easycmd/",
     "icon": "images/Icon_128.png",
     "engines": {
-        "vscode": "^1.96.0"
+        "vscode": "^1.85.0"
     },
     "categories": [
         "Other",
@@ -70,22 +70,22 @@
         "keybindings": [
             {
                 "command": "easycmd.pasteInCurrentTerminal",
-                "key": "ctrl+x ctrl+c",
+                "key": "alt+x alt+c",
                 "when": "editorTextFocus"
             },
             {
                 "command": "easycmd.runInCurrentTerminal",
-                "key": "ctrl+x ctrl+v",
+                "key": "alt+x alt+v",
                 "when": "editorTextFocus"
             },
             {
                 "command": "easycmd.runInNewTerminalVSCode",
-                "key": "ctrl+x ctrl+b",
+                "key": "alt+x alt+b",
                 "when": "editorTextFocus"
             },
             {
                 "command": "easycmd.runInNewTerminalExternal",
-                "key": "ctrl+x ctrl+n",
+                "key": "alt+x alt+n",
                 "when": "editorTextFocus"
             }
         ],
@@ -161,7 +161,7 @@
         "test": "vscode-test"
     },
     "devDependencies": {
-        "@types/vscode": "^1.96.0",
+        "@types/vscode": "^1.85.0",
         "@types/mocha": "^10.0.10",
         "@types/node": "20.x",
         "@typescript-eslint/eslint-plugin": "^8.17.0",

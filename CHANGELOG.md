@@ -2,6 +2,10 @@
 
 All notable changes to the EasyCMD extension will be documented in this file.
 
+## [0.1.1] - Update
+
+-   Turns out making CTRL X command was bad for usability, changed to ALT + X + <next>
+
 ## [0.1.0] - Initial Release
 
 ### Added

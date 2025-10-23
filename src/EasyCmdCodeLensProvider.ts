@@ -61,17 +61,22 @@ export class EasyCmdCodeLensProvider implements vscode.CodeLensProvider {
         const lines = text.split("\n");
 
         for (let i = 0; i < lines.length; i++) {
-            const line = lines[i].trim();
+            const originalLine = lines[i];
 
             // Check for patterns in comments or direct in line
-            const contentToCheck = getContentToCheck(line);
+            const contentToCheck = getContentToCheck(originalLine);
+
+            // Skip if no content after parsing (robust guard)
+            if (!contentToCheck) {
+                continue;
+            }
 
             // Check if any of our patterns match
             const matchedPattern = targetPatterns.find(pattern => contentToCheck.startsWith(pattern));
 
             if (matchedPattern) {
                 const commandText = contentToCheck.substring(matchedPattern.length).trim();
-                const range = new vscode.Range(i, 0, i, line.length);
+                const range = new vscode.Range(i, 0, i, originalLine.length);
 
                 this.attachCodeLens(codeLenses, range, commandText);
             }

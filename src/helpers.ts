@@ -3,13 +3,13 @@ import * as child_process from "child_process";
 import * as vscode from "vscode";
 import * as path from "path";
 
-export function getContentToCheck(line: string) {
+export function getContentToCheck(line: string): string {
     const commentLine = line.match(/\/\/\s*(.*)|#\s*(.*)|<!--\s*(.*?)\s*-->|\/\*\s*(.*?)\s*\*\//);
     const contentToCheck = commentLine
-        ? (commentLine[1] || commentLine[2] || commentLine[3] || commentLine[4])?.trim()
-        : line.trim();
+        ? (commentLine[1] ?? commentLine[2] ?? commentLine[3] ?? commentLine[4] ?? "")
+        : line;
 
-    return contentToCheck;
+    return contentToCheck.trim();
 }
 
 export function runCommandInExternalTerminal(command: string): void {

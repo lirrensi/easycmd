@@ -1,13 +1,13 @@
 {
     "name": "easycmd",
     "displayName": "easycmd",
-    "description": "",
-    "version": "0.1.1",
+    "description": "A quality of life extension to run commands straight from the editor without endless copy paste. Adds code-lens quick buttons to run line as commands - works in every file with a special prefix or in own .easycmd files.",
+    "version": "0.1.2",
     "publisher": "lirrensi",
     "repository": "https://github.com/lirrensi/easycmd/",
     "icon": "images/Icon_128.png",
     "engines": {
-        "vscode": "^1.85.0"
+        "vscode": "^1.96.0"
     },
     "categories": [
         "Other",
@@ -158,17 +158,19 @@
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile && npm run lint",
         "lint": "eslint src",
-        "test": "vscode-test"
+        "test": "vscode-test",
+        "package": "vsce package --no-dependencies"
     },
     "devDependencies": {
-        "@types/vscode": "^1.85.0",
+        "@types/estree": "^1.0.8",
         "@types/mocha": "^10.0.10",
-        "@types/node": "20.x",
-        "@typescript-eslint/eslint-plugin": "^8.17.0",
-        "@typescript-eslint/parser": "^8.17.0",
-        "eslint": "^9.16.0",
-        "typescript": "^5.7.2",
-        "@vscode/test-cli": "^0.0.10",
-        "@vscode/test-electron": "^2.4.1"
+        "@types/node": "24.8.1",
+        "@types/vscode": "^1.96.0",
+        "@typescript-eslint/eslint-plugin": "^8.46.1",
+        "@typescript-eslint/parser": "^8.46.1",
+        "@vscode/test-cli": "^0.0.12",
+        "@vscode/test-electron": "^2.5.2",
+        "eslint": "^9.38.0",
+        "typescript": "^5.9.3"
     }
 }
